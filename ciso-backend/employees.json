@@ -1,0 +1,102 @@
+[
+  {
+    "employeeId": "EMP001",
+    "name": "John Smith",
+    "designation": "Finance Manager"
+  },
+  {
+    "employeeId": "EMP002",
+    "name": "Emily Johnson",
+    "designation": "HR Executive"
+  },
+  {
+    "employeeId": "EMP003",
+    "name": "Michael Brown",
+    "designation": "Software Engineer"
+  },
+  {
+    "employeeId": "EMP004",
+    "name": "Sarah Davis",
+    "designation": "Sales Representative"
+  },
+  {
+    "employeeId": "EMP005",
+    "name": "James Wilson",
+    "designation": "IT Support Specialist"
+  },
+  {
+    "employeeId": "EMP006",
+    "name": "Olivia Taylor",
+    "designation": "Data Analyst"
+  },
+  {
+    "employeeId": "EMP007",
+    "name": "William Miller",
+    "designation": "Marketing Manager"
+  },
+  {
+    "employeeId": "EMP008",
+    "name": "Sophia Anderson",
+    "designation": "Legal Advisor"
+  },
+  {
+    "employeeId": "EMP009",
+    "name": "Daniel Thomas",
+    "designation": "Procurement Officer"
+  },
+  {
+    "employeeId": "EMP010",
+    "name": "Ava Jackson",
+    "designation": "CEO Assistant"
+  },
+  {
+    "employeeId": "EMP011",
+    "name": "Matthew White",
+    "designation": "System Administrator"
+  },
+  {
+    "employeeId": "EMP012",
+    "name": "Isabella Harris",
+    "designation": "Product Manager"
+  },
+  {
+    "employeeId": "EMP013",
+    "name": "Christopher Martin",
+    "designation": "Network Engineer"
+  },
+  {
+    "employeeId": "EMP014",
+    "name": "Mia Thompson",
+    "designation": "Customer Support Lead"
+  },
+  {
+    "employeeId": "EMP015",
+    "name": "Benjamin Garcia",
+    "designation": "Cloud Architect"
+  },
+  {
+    "employeeId": "EMP016",
+    "name": "Charlotte Martinez",
+    "designation": "Risk & Compliance Officer"
+  },
+  {
+    "employeeId": "EMP017",
+    "name": "Alexander Robinson",
+    "designation": "Security Analyst"
+  },
+  {
+    "employeeId": "EMP018",
+    "name": "Amelia Clark",
+    "designation": "Business Analyst"
+  },
+  {
+    "employeeId": "EMP019",
+    "name": "Henry Lewis",
+    "designation": "Operations Manager"
+  },
+  {
+    "employeeId": "EMP020",
+    "name": "Grace Walker",
+    "designation": "Project Coordinator"
+  }
+]
