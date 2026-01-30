@@ -9,7 +9,7 @@ const Dashboard = () => {
       {/* Hero Section */}
       <main className="mx-auto text-center bg-white/90 backdrop-blur-md rounded-2xl shadow-lg p-6 mb-8 max-w-3xl">
         <h1 className="text-3xl md:text-4xl font-extrabold text-gradient bg-clip-text text-transparent bg-gradient-to-r from-blue-600 to-purple-600 mb-4">
-          🚀 Welcome to CISO Bot Masarrati
+          🚀 Welcome to CISO Bot
         </h1>
         <p className="text-sm md:text-base text-gray-700 mb-4 leading-relaxed">
           Chat with our{" "}

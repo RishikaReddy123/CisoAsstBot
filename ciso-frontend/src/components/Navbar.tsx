@@ -12,7 +12,7 @@ const Navbar = () => {
         onClick={() => navigate("/ask")}
         className="text-xl font-bold text-blue-700 cursor-pointer"
       >
-        CISO Bot Masarrati
+        CISO Bot
       </h1>
 
       <nav className="flex gap-6 items-center">

@@ -84,7 +84,7 @@ const Signup = () => {
         </p>
 
         <p className="mt-6 text-center text-xs text-gray-400">
-          © 2025 CISO Bot Masarrati. All rights reserved.
+          © 2025 CISO Bot. All rights reserved.
         </p>
       </form>
     </div>
