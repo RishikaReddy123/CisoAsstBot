@@ -1,36 +1,41 @@
 import express from "express";
 import * as dotenv from "dotenv";
 import cors from "cors";
+import http from "http";
+import { WebSocketServer } from "ws";
 import authRoutes from "./routes/authRoutes.js";
 import profileRoutes from "./routes/profileRoutes.js";
 import askRoutes from "./routes/askRoutes.js";
 import conversationRoutes from "./routes/conversationRoutes.js";
+import uploadRoutes from "./routes/upload.js"; // ✅ Add this line
 import { connectDB } from "./utils/db.js";
-import http from "http";
-import { WebSocketServer, WebSocket } from "ws";
 import { handleBotStream } from "./controllers/askController.js";
 
 dotenv.config();
-
 const app = express();
-app.use(express.json());
-
-app.use(cors());
-
-export const server = http.createServer(app);
-export const wss = new WebSocketServer({ server, path: "/ws" });
-
 const port = process.env.PORT || 3000;
 
+const server = http.createServer(app);
+const wss = new WebSocketServer({ server, path: "/ws" });
+
+app.use(cors());
+app.use(express.json());
+
+// ✅ Serve uploaded files statically
+app.use("/uploads", express.static("uploads"));
+
+// ✅ Mount all routes
 app.use("/auth", authRoutes);
 app.use("/profiles", profileRoutes);
 app.use("/ask", askRoutes);
 app.use("/conversations", conversationRoutes);
+app.use("/upload", uploadRoutes); // ✅ Add this
 
 connectDB()
   .then(() => {
-    wss.on("connection", (ws: WebSocket) => {
-      console.log("Websocket client connected!");
+    wss.on("connection", (ws) => {
+      console.log("✅ WebSocket client connected!");
+
       ws.on("message", async (msg) => {
         try {
           const { question, token, conversationId } = JSON.parse(
@@ -43,15 +48,22 @@ connectDB()
             return;
           }
           await handleBotStream(ws, question, token, conversationId);
-        } catch (error) {
-          console.error("WS Error", error);
+        } catch (err) {
+          console.error("WS Error:", err);
           ws.send(JSON.stringify({ error: "Invalid request" }));
         }
       });
+
+      ws.on("close", () => console.log("❌ Client disconnected"));
     });
-    server.listen(port, () => console.log(`Server is running on port ${port}`));
+
+    server.listen(port, () =>
+      console.log(
+        `🚀 Server running with WebSocket on http://localhost:${port}`
+      )
+    );
   })
-  .catch((error) => {
-    console.error("Failed to connect!", error);
+  .catch((err) => {
+    console.error("Failed to connect DB:", err);
     process.exit(1);
   });
